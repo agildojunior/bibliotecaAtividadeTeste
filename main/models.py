@@ -7,14 +7,14 @@ class Autor(models.Model):
     idade = models.CharField(max_length=3)
 
     def __str__(self):
-        return self.nome
+        return str(self.nome)
 
 
 class Categoria(models.Model):
     nome = models.CharField(max_length=150)
     
     def __str__(self):
-        return self.nome
+        return str(self.nome)
 
 
 class Livro(models.Model):
@@ -23,7 +23,7 @@ class Livro(models.Model):
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE, null=True, blank=True)
     
     def __str__(self):
-        return self.nome
+        return str(str(self.nome))
 
 
 class Emprestimo(models.Model):
@@ -36,7 +36,7 @@ class Aluno(models.Model):
     Emprestimo = models.ManyToManyField(Emprestimo, null=True, blank=True)
 
     def __str__(self):
-        return self.nome
+        return str(self.nome)
 
 
 class Curso(models.Model):
@@ -44,5 +44,5 @@ class Curso(models.Model):
     aluno = models.ManyToManyField(Aluno, null=True, blank=True)
 
     def __str__(self):
-        return self.nome
+        return str(self.nome)
 
