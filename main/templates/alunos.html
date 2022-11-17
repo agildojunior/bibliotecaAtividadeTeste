@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid fundo">
-            <a class="navbar-brand fundo espaco" href="#">Inicio</a>
+            <a class="navbar-brand fundo espaco" href="#">Alunos</a>
             <div class="collapse navbar-collapse fundo" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -29,8 +29,26 @@
             </div>
         </div>
     </nav>
-    <div class="container" style="min-height:100px">
-        <h1 style="text-align: center;">Bem Vindo</h1>
+    <div class="container">
+        <h2 style="text-align: center;">Alunos</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for alunos in alunos %}
+            <tr>
+                <th scope="row">{{alunos.id}}</th>
+                <td>{{alunos.nome}}</td>
+                <td>{{alunos.email}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
     
 </body>
